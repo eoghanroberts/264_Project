@@ -1,4 +1,5 @@
 from struct import * 
+#does this work
 class packet:
     def __init__(self, packet_type, seqno, dataLen, data):
         self.magicno = int('0x497E', 16) #is static
