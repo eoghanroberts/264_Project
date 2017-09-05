@@ -1,5 +1,4 @@
 from struct import * 
-#does this work YES IT DID
 class packet:
     def __init__(self, packet_type, seqno, dataLen, data):
         self.magicno = int('0x497E', 16) #is static
@@ -47,17 +46,32 @@ class packet:
                              self.dataLen,
                              self.data)
         #gota convert the data into bits
-        print(output_packet)
-        return output_packet
+        lenght = len(output_packet)
+        #lenght = 0
+        #lenght += len
+        #lenght +=
+        #lenght +=
+        #lenght +=
+        #lenght +=
+        #lenght +=
+        #print(output_packet)
+        return output_packet, lenght
+    
 
     def setUp(self):
         self.setPacketType()
         self.setData()
-        packet = self.struct_create()
-        return packet
+        packet_parts = self.struct_create()
+        packet = packet_parts[0]
+        lenght = packet_parts[1]
+        #print(packet)
+        #print(lenght)
+        #len_message = self.message_length()
+       
+        return packet, lenght
+
 
 #shows how a packet can be created and unpacked 
-test = packet(1, 1, 8, 'abduetse')
-packet = test.setUp()
-print(calcsize('H??H{}s'.format(0)))
-print(unpack('H??H{}s'.format(len(test.data)), packet))
+#test = packet(1, 1, 8, 'abduetse')
+#packet = test.setUp()
+#print(unpack('H??H{}s'.format(len(test.data)), packet))
